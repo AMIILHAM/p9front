@@ -1,0 +1,27 @@
+.modal{
+    .modal-header{
+        border: none;
+        padding: 2rem 2rem 4em 2rem;
+        will-change: auto;
+        .modal-title{
+            font-weight: 600;
+            font-size: 1.125rem;
+            line-height: 25px;
+            color: $text-color;
+        }
+        .close{
+            background: none;
+            border: none;
+            font-size: 2rem;
+            line-height: normal;
+        }
+    }
+    .modal-body{
+        padding: 2rem;
+    }
+    .modal-footer{
+        border: none;
+        padding: 0 2rem 2rem 2rem;
+        justify-content: center;
+    }
+}

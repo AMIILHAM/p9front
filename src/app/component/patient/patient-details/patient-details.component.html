@@ -1,0 +1,92 @@
+
+<div>
+
+
+  <div class="container bootdey">
+
+    <div class="row col-md-12">
+      <h2 id="page-heading">
+        <span>Details Patient</span>
+
+        <button type="submit" (click)="previousState()" class="btn btn-outline-primary float-end" style="margin-left: 5px;">
+          <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        </button>
+
+        <button type="submit" (click)="addNote()" class="btn btn-primary float-end">
+          <i class="fa fa-plus" aria-hidden="true"></i>
+        </button>
+
+      </h2>
+
+      <div class="col-md-4">
+        <div class="portlet light profile-sidebar-portlet bordered">
+          <div class="profile-userpic" style="text-align: center;">
+            <img src="https://avatars.dicebear.com/api/adventurer-neutral/mail%40ashallendesign.co.uk.svg" class="img-responsive" alt=""> </div>
+          <div class="profile-usertitle">
+            <div class="profile-usertitle-name"> {{patient?.nom + ' ' + patient?.prenom}} </div>
+            <div class="profile-usertitle-name"> {{patient?.dateNaissance}} </div>
+            <div class="profile-usertitle-name"> {{patient?.genre}} </div>
+            <div class="profile-usertitle-name"> {{patient?.adressePostale}} </div>
+            <div class="profile-usertitle-job"> {{patient?.numTelephone}} </div>
+          </div>
+          <div class="profile-userbuttons">
+            <button type="button" (click)="updatePatient()" class="btn btn-info btn-sm">
+              <i class="fa fa-pencil" aria-hidden="true"></i>
+            </button><br><br>
+
+            <button type="button" class="btn btn-{{getStatutClass(risqueStatut)}}">{{ risqueStatut }}</button>
+            <br><br>
+
+          </div>
+
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="portlet light bordered">
+          <div class="portlet-body">
+            <table class="table mb-0">
+              <thead>
+              <tr>
+                <th class="col-md-6">Notes</th>
+                <th class="col-md-1 text-center">Date</th>
+                <th class="col-md-1 text-center">Actions</th>
+              </tr>
+              </thead>
+              <tbody [ngSwitch]="notes && notes.length > 0">
+              <ng-container *ngSwitchCase="true">
+                <tr *ngFor="let note of notes">
+
+                  <td class="col-md-6">{{ note.note }}</td>
+                  <td class="col-md-1 text-center">{{note.dateNote | date: 'dd/MM/yyyy'}}</td>
+
+                  <td class="col-md-1 text-center">
+                    <div class="btn-group d-flex" role="group">
+                      <button type="submit" (click)="updateNote(note)" class="btn btn-outline-primary">
+                        <i class="fa fa-eye" aria-hidden="true"></i>
+                      </button>
+                      <button type="submit" (click)="updateNote(note)" class="btn btn-outline-primary">
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </ng-container>
+              <ng-container *ngSwitchDefault>
+                <tr>
+                  <td class="no-data" colspan="18">
+                    <span>No note was found</span>
+                  </td>
+                </tr>
+              </ng-container>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+

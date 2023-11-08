@@ -1,0 +1,25 @@
+footer{
+    border-top: 5px solid #036C32;
+    padding-bottom: 8px;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+    h2{
+        color: #1B5E20;
+        font-size: 32px;
+        font-weight: bold;
+        margin: 0;
+    }
+    ul{
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        li{
+            align-self: center;
+        }
+    }
+}

@@ -1,0 +1,34 @@
+html,
+body,
+.intro {
+  height: 100%;
+}
+
+table td,
+table th {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: center;
+}
+
+thead th {
+  color: #000000;
+}
+
+.table-scroll {
+  border-radius: .5rem;
+}
+
+.table-scroll table thead th {
+  font-size: 1.05rem;
+
+}
+thead {
+  top: 0;
+  position: sticky;
+}
+
+.wrapper #content > .container-fluid .table-filter, .wrapper #content > .container-sm .table-filter, .wrapper #content > .container-md .table-filter, .wrapper #content > .container-lg .table-filter, .wrapper #content > .container-xl .table-filter, .wrapper #content > .container-xxl .table-filter {
+  margin-bottom: 0;
+}

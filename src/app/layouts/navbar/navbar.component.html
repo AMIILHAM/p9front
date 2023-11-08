@@ -1,0 +1,43 @@
+<a class="logo" routerLink="/">
+    <img ngSrc="../../../assets/images/logo2.png" alt="" height="124" width="200"/>
+</a>
+
+<ul class="navbar-nav ml-auto">
+    <ng-container *ngFor="let menu of sidebar">
+        <li class="nav-item dropdown pointer">
+        <a *ngIf="menu.route"
+           routerLink="{{menu.route}}"
+           class="nav-link {{menu.libelle}}"
+           routerLinkActive="active"
+           [routerLinkActiveOptions]="{exact:true}">
+            <i></i>
+          <span>{{menu.libelle}}</span>
+        </a>
+
+        <ul class="sub-menu" *ngIf="menu.children" #collapse="ngbCollapse" [(ngbCollapse)]="!menu.isCollapsed">
+          <ng-container *ngFor="let submenu of menu.children">
+            <li>
+              <a class="dropdown-item {{submenu.libelle}}" routerLink="{{submenu.route}}" routerLinkActive="active">
+                <i></i><span>{{submenu.libelle}}</span>
+              </a>
+            </li>
+          </ng-container>
+        </ul>
+    </li>
+    </ng-container>
+
+</ul>
+
+<div class="user" ngbDropdown>
+    <div class="user-info d-flex align-items-center" ngbDropdownToggle id="navbarDropdown" role="button" tabindex="0">
+        <i></i>
+        <div class="info d-flex flex-column">
+            <span class="login">{{getUserName()}}</span>
+        </div>
+    </div>
+  <div ngbDropdownMenu aria-labelledby="navbarDropdown" class="dropdown-menu">
+    <a ngbDropdownItem class="logout" href="#" title="logout" (click)="logout()">
+      <i></i><span>logout</span>
+    </a>
+  </div>
+</div>

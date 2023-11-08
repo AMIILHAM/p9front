@@ -1,0 +1,27 @@
+<form *ngIf="patient" name="deleteForm" [formGroup]="noteForm" (ngSubmit)="confirm()">
+  <div class="modal-header">
+    <h4 class="modal-title">{{ title }}</h4>
+
+    <button type="button" class="btn" data-dismiss="modal" aria-hidden="true" (click)="cancel()">
+      <i class="fa fa-times" aria-hidden="true"></i>
+    </button>
+  </div>
+
+  <div class="modal-body">
+    <div class="form-group">
+      <textarea class="form-control" name="note" id="note" formControlName="note" rows="10" required></textarea>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-secondary" data-dismiss="modal" (click)="cancel()">
+      <i class="fa fa-arrow-left" aria-hidden="true"></i>
+    </button>
+
+    <button id="save" type="submit" class="btn btn-outline-success">
+      <i class="fa fa-floppy-o" aria-hidden="true"></i>
+    </button>
+  </div>
+</form>
+
+

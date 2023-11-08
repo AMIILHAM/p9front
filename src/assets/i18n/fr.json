@@ -1,0 +1,85 @@
+{
+	"global": {
+		"menu": {
+			"entities": {
+				"dossier": "Dossier",
+				"gestion-dossier": "Gestion des dossiers",
+				"dashboard": "Tableau de bord",
+				"home": "Accueil"
+			},
+			"account": {
+				"main": "Compte",
+				"settings": "Profil",
+				"password": "Mot de passe",
+				"sessions": "Sessions",
+				"login": "S'authentifier",
+				"logout": "Déconnexion",
+				"register": "Créer un compte"
+			},
+			"language": "Langue"
+		},
+		"action":{
+			"actions": "Actions",
+			"login": "S'authentifier",
+			"search": "Rechercher",
+			"refresh": "Rafraîchir",
+			"view": "Voir",
+			"edit": "Editer",
+			"save": "Sauvegarder",
+			"cancel": "Annuler",
+			"back": "Retour",
+			"delete": "Supprimer",
+			"validate": "Valider"
+		},
+		"actif":{
+			"title":"État",
+			"true":"Activé",
+			"false":"Désactivé",
+			"null": "Désactivé"
+		},
+		"validation":{
+			"required": "Ce champ est obligatoire.",
+			"emailPattern": "Email invalide",
+			"datePattern": "Date invalide",
+			"formatInvalid": "Format invalide",
+			"maxLength": "Limite de caractères dépassée",
+			"passwordPattern": "Le mot de passe doit contenir des majuscules, des minuscules, des chiffres, des caractères spéciaux, pas d'espace, au moins 8 caractères et au plus 50 caractères",
+			"passwordMismatch": "Votre nouveau mot de passe ne correspond pas au mot de passe de confirmation que vous avez saisi."
+		},
+		"error":{
+			"INTERNAL_SERVER_ERROR": "Erreur interne du serveur",
+			"INVALID_CREDENTIALS": "Login ou mot de passe incorrect",
+			"USERNAME_ALREADY_EXIST": "Le nom d'utilisateur existe déja.",
+      "EMAIL_ALREADY_EXIST": "Email exist déja.",
+			"PASSWORD_DO_NOT_MATCH": "Votre mot de passe actuel est incorrect.",
+			"TOKEN_EXPIRED": "Votre session a expiré. Veuillez vous connecter à nouveau.",
+      "TOKEN_INVALID": "Votre session a expiré. Veuillez vous connecter à nouveau.",
+			"UN_AUTHORIZED": "Non autorisé. Veuillez vous connecter avec les informations d'identification appropriées.",
+			"ACCESS_DENIED_ERROR": "Accès refusé. Vous n'êtes pas autorisé à effectuer cette action."
+		},
+		"item-count": "Affichage {{first}} - {{second}} de {{total}} enregistrements."
+	},
+	"login": {
+		"title": "Authentification",
+		"field": {
+			"username": "Nom d'utilisateur",
+			"password": "Mot de passe"
+		},
+		"placeholder":{
+			"username": "Nom d'utilisateur",
+			"password": "Mot de passe"
+		},
+    "error":{
+      "usernameRequired": "Nom d'utilisateur est obligatoire",
+      "passwordRequired": "Mot de passe est obligatoire"
+    }
+	},
+	"home": {
+		"title1": "Bienvenue",
+		"title2": "à votre plate-forme <br> des échanges NARSA",
+		"newOperationTitle": "Nouvelles opérations récentes",
+		"newDeclaration": "Nouvelles déclarations",
+		"newNantissement": "Nouveaux actes de nantissement",
+		"newMainlevee": "Nouvelles demandes de mainlevée"
+	}
+}

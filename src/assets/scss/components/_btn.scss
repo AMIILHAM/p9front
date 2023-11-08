@@ -1,0 +1,85 @@
+$persian-blue: #0060AF;
+.btn {
+    border-radius: 4px;
+    padding: 8px 10px;
+    height: $btn-height;
+    min-width: 140px;
+    box-shadow: none !important;
+    font-size: $btn-fs;
+    font-weight: $btn-fw;
+    color: $btn-color;
+    border: 1px solid $persian-blue;
+
+    &.btn-new,
+    &.btn-new:active {
+      background-color: $bg-btn-new;
+      i {
+        background-image: url($icon-btn-new);
+      }
+    }
+    &.btn-edit {
+      background-color: $bg-btn-edit;
+      i {
+        background-image: url($icon-btn-edit);
+      }
+    }
+    &.btn-save {
+      background-color: $bg-btn-save;
+      i {
+        background-image: url($icon-btn-save);
+      }
+    }
+    &.btn-delete {
+      background-color: $bg-btn-delete;
+      i {
+        background-image: url($icon-btn-delete);
+      }
+    }
+    &.btn-cancel {
+      background-color: $bg-btn-cancel;
+      i {
+        background-image: url($icon-btn-cancel);
+      }
+    }
+    &.btn-search {
+      background-color: #0060AF;
+      i {
+        background-image: url($icon-btn-search);
+      }
+    }
+    &.btn-refresh {
+      background-color: $bg-btn-refresh;
+      i {
+        background-image: url($icon-btn-refresh);
+      }
+    }
+
+    &:focus,
+    &:active,
+    &:hover {
+      background-color: $persian-blue-1 !important;
+      color: $btn-color !important;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      border-color: $persian-blue;
+      color: $btn-color;
+    }
+
+    i {
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 5px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+}
+.input-group{
+  .btn{
+    min-width: auto;
+  }
+}

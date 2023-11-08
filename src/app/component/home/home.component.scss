@@ -1,0 +1,52 @@
+.intro{
+  border: 5px solid #9B9C9E;
+  border-radius: 35px;
+  padding: 25px 40px;
+  color: #191C23;
+  font-size: 21px;
+  line-height: normal;
+  background-color: #fff;
+  text-align: justify;
+}
+
+.btn-acces-rbe,
+.btn-contactez-nous{
+  display: block;
+  text-align: center;
+  margin: 30px auto;
+  cursor: pointer;
+}
+.btn-contactez-nous{
+  margin-bottom: 0;
+}
+
+.stats{
+.item{
+  background-color: #fff;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  height: 100%;
+  position: relative;
+
+h3{
+  color: #191C23;
+  font-size: 18px;
+  font-weight: bold;
+  position: absolute;
+  top: 0.75rem;
+  left: 0;
+  width: 100%;
+}
+.info{
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  text-align: left;
+  font-weight: 600;
+  line-height: normal;
+  font-size: 0.813rem;
+  padding: 0 5px 5px;
+}
+}
+}

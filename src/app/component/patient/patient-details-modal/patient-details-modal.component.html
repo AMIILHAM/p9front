@@ -1,0 +1,48 @@
+<form *ngIf="patient" name="deleteForm" (ngSubmit)="submitObject()">
+  <div class="modal-header">
+    <h4 class="modal-title">{{ title }}</h4>
+
+    <button type="button" class="btn" data-dismiss="modal" aria-hidden="true" (click)="cancel()">
+      <i class="fa fa-times" aria-hidden="true"></i>
+    </button>
+  </div>
+
+  <div class="modal-body">
+    <div class="form-group">
+      <label>Nom</label>
+      <input name="nom" class="form-control" [(ngModel)]="patient.nom" type="email">
+    </div>
+    <div class="form-group">
+      <label>Prenom</label>
+      <input name="prenom" class="form-control" [(ngModel)]="patient.prenom" type="email">
+    </div>
+    <div class="form-group">
+      <label>Date de naissance</label>
+      <input name="dateNaissance" class="form-control" placeholder="Format : yyyy-mm-dd" [(ngModel)]="patient.dateNaissance" type="email">
+    </div>
+    <div class="form-group">
+      <label>Genre</label>
+      <input name="genre" class="form-control" placeholder="MALE / FEMALE" [(ngModel)]="patient.genre" type="email">
+    </div>
+    <div class="form-group">
+      <label>Adresse Postale</label>
+      <input name="adressePostale" class="form-control" [(ngModel)]="patient.adressePostale" type="email">
+    </div>
+    <div class="form-group">
+      <label>Telephone</label>
+      <input name="numTelephone" class="form-control" [(ngModel)]="patient.numTelephone" type="email">
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-secondary" data-dismiss="modal" (click)="cancel()">
+      <i class="fa fa-arrow-left" aria-hidden="true"></i>
+    </button>
+
+    <button id="save" type="submit" class="btn btn-outline-success">
+      <i class="fa fa-floppy-o" aria-hidden="true"></i>
+    </button>
+  </div>
+</form>
+
+
