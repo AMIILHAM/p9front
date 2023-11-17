@@ -63,12 +63,18 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "medilabosolutionsFrontend:build",
+            "proxyConfig": "proxy.conf.json"
+          },
           "configurations": {
             "production": {
-              "browserTarget": "medilabosolutionsFrontend:build:production"
+              "browserTarget": "medilabosolutionsFrontend:build:production",
+              "proxyConfig": "proxy.conf.json"
             },
             "development": {
-              "browserTarget": "medilabosolutionsFrontend:build:development"
+              "browserTarget": "medilabosolutionsFrontend:build:development",
+              "proxyConfig": "proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

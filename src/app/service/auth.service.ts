@@ -20,7 +20,7 @@ const httpOptions = {
 })
 export class AuthService {
 
-  public resourceUrl: string = 'http://localhost:8081';
+  public resourceUrl: string = 'http://localhost:8080';
   private readonly TOKEN_KEY = 'accessToken';
   private readonly TOKEN_EXPIRATION_KEY = 'tokenExpiration';
   private readonly CHECK_INTERVAL = 60000;
@@ -39,6 +39,7 @@ export class AuthService {
   login(credential: any): Observable<any> {
     return this.http.post(this.resourceUrl + '/auth/login', credential, httpOptions).pipe(
       catchError((error: any) => {
+        console.log(error)
         return throwError(error);
       })
     );

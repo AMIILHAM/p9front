@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpResponse} from "@angular/common/http";
-import {ConfigService} from "./config.service";
 import {Observable} from "rxjs";
 import {INote} from "../model/note.model";
 
@@ -11,6 +10,8 @@ export type EntityResponseType = HttpResponse<INote>;
 })
 export class NoteService {
 
+  public resourceUrl = 'http://localhost:8080/notes';
+  constructor(private http: HttpClient) {
   public resourceUrl = 'http://localhost:8082/notes';
   constructor(private http: HttpClient, private configService: ConfigService) {
     //this.resourceUrl = this.configService.config.BASE_URI + '/notes';

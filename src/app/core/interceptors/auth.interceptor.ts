@@ -54,6 +54,7 @@ export class AuthInterceptor implements HttpInterceptor {
       this.refreshTokenSubject.next(null);
 
       const token = this.tokenService.getRefreshToken();
+      this.resourceUrl = 'http://localhost:8080';
       this.resourceUrl = 'http://localhost:8081';
       if (token)
         return this.authService.refreshToken(token,this.resourceUrl).pipe(

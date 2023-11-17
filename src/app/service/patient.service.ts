@@ -16,9 +16,10 @@ export type patientSearchPageResponseType = HttpResponse<ISearchPage<IPatient[]>
 })
 export class PatientService {
 
+  public resourceUrl = 'http://localhost:8080/patients';
+  constructor(private http: HttpClient) {
   public resourceUrl = '';
   constructor(private http: HttpClient, private configService: ConfigService) {
-    this.resourceUrl = this.configService.config.BASE_URI + '/patients';
   }
 
   findPatientById(id: number): Observable<EntityResponseType> {

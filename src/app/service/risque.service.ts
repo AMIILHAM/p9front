@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpResponse} from "@angular/common/http";
-import {ConfigService} from "./config.service";
 import {Risque} from "../enum/risque";
 import {Observable} from "rxjs";
 

@@ -9,6 +9,7 @@ import { ToastService } from './toast-service';
       *ngFor="let toast of toastService.toasts"
       [class]="toast.classname"
       [autohide]="toast.autohide"
+      [delay]="toast.delay || 2000"
       [delay]="toast.delay || 5000"
       (hide)="toastService.remove(toast)"
     >
