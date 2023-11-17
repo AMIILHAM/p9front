@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {ConfigService} from "./config.service";
 import {HttpClient, HttpResponse} from "@angular/common/http";
 import {IPatient} from "../model/patient.model";
 import {Observable} from "rxjs";
@@ -17,6 +18,8 @@ export class PatientService {
 
   public resourceUrl = 'http://localhost:8080/patients';
   constructor(private http: HttpClient) {
+  public resourceUrl = '';
+  constructor(private http: HttpClient, private configService: ConfigService) {
   }
 
   findPatientById(id: number): Observable<EntityResponseType> {

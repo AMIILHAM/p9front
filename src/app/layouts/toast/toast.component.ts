@@ -10,6 +10,7 @@ import { ToastService } from './toast-service';
       [class]="toast.classname"
       [autohide]="toast.autohide"
       [delay]="toast.delay || 2000"
+      [delay]="toast.delay || 5000"
       (hide)="toastService.remove(toast)"
     >
       <button type="button" class="close" aria-label="Close" (click)="toastService.remove(toast)">

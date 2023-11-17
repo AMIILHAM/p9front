@@ -13,7 +13,8 @@ export class RisqueService {
 
   public resourceUrl = 'http://localhost:8083/risque/analyse';
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private configService: ConfigService) {
+    //this.resourceUrl = this.configService.config.BASE_URI + '/risque/analyse';
   }
 
   getPatientRisqueStatus(id: number): Observable<EntityResponseType> {

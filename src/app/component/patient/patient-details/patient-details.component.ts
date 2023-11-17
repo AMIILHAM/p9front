@@ -61,6 +61,7 @@ export class PatientDetailsComponent implements OnInit{
     addPatientModal.componentInstance.passEntry
       .subscribe((receivedPatient:IPatient) => {
         this.patientService.createOrUpdatePatient(receivedPatient).subscribe({
+          next: (response) => console.log("Response :" + response)
         });
       })
   }

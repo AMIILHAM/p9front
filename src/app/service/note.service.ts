@@ -12,6 +12,9 @@ export class NoteService {
 
   public resourceUrl = 'http://localhost:8080/notes';
   constructor(private http: HttpClient) {
+  public resourceUrl = 'http://localhost:8082/notes';
+  constructor(private http: HttpClient, private configService: ConfigService) {
+    //this.resourceUrl = this.configService.config.BASE_URI + '/notes';
   }
 
   findAllNotesByPatientId(id: number): Observable<EntityResponseType> {

@@ -29,6 +29,7 @@ export class AuthService {
   constructor(protected http: HttpClient,
               public tokenStorageService:TokenStorageService,
               private jwtHelper : JwtHelperService,
+              private configService: ConfigService,
               private router: Router)
   {
     this.initTokenCheck();

@@ -116,6 +116,7 @@ export class PatientsListComponent implements OnInit, OnDestroy{
     addPatientModal.componentInstance.passEntry
       .subscribe((receivedPatient:IPatient) => {
         this.patientService.createOrUpdatePatient(receivedPatient).subscribe({
+          next: (response) => console.log("Response :" + response)
         });
       })
   }
@@ -128,6 +129,9 @@ export class PatientsListComponent implements OnInit, OnDestroy{
       .subscribe((receivedPatient:IPatient) => {
         this.patientService.createOrUpdatePatient(receivedPatient).subscribe({
         });
+          next: (response) => console.log("Response :" + response)
+        });
+        console.log(receivedPatient);
       })
   }
 
