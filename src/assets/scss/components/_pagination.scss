@@ -1,0 +1,51 @@
+.pagination {
+    margin: 0;
+
+    .page-item {
+      &:nth-child(2) {
+        margin-right: 5px;
+      }
+      &:nth-last-child(2){
+        margin-left: 5px;
+      }
+
+      &:nth-child(3) a {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+      }
+      &:nth-last-child(3) a {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+
+      a[aria-label='First'] span,
+      a[aria-label='Previous'] span,
+      a[aria-label='Next'] span,
+      a[aria-label='Last'] span {
+        display: none;
+      }
+      a[aria-label='First']::before {
+        content: '«';
+      }
+      a[aria-label='Previous']::before {
+        content: '‹';
+      }
+      a[aria-label='Next']::before {
+        content: '›';
+      }
+      a[aria-label='Last']::before {
+        content: '»';
+      }
+
+      a {
+        color: $manatee;
+      }
+      &.active a {
+        background: $persian-blue;
+        border-color: $persian-blue;
+        color: #fff;
+        margin-top: -1px;
+        box-shadow: none;
+      }
+    }
+  }

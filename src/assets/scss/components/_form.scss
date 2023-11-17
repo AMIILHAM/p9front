@@ -1,0 +1,122 @@
+.form-group {
+    margin-bottom: 1.25rem;
+    position: relative;
+    label{
+      font-size: $form-label-fs;
+      font-weight: $form-label-fw;
+      color: $form-label-color;
+      margin-bottom: 5px;
+    }
+    .required{
+      color: red;
+    }
+    .col-form-label {
+      text-align: left !important;
+    }
+    .form-control {
+      background: #ffffff;
+      border: 1px solid $border-color;
+      border-radius: 4px;
+      font-size: 0.875rem;
+      color: $grey;
+      height: $form-control-height;
+
+      &.ng-select {
+        padding: 0;
+        .ng-select-container {
+          background: #fff;
+          font-size: 12px;
+          color: #878e9f;
+          min-height: auto;
+          height: 100%;
+          padding: 0.375rem 0.75rem;
+          border: none;
+          box-shadow: none;
+          .ng-value-container{
+            padding: 0;
+            .ng-placeholder{
+              color: #6c757d;
+            }
+            .ng-value{
+              color: #333333;
+            }
+          }
+        }
+      }
+      &:read-only{
+        background: #EEEEEE;
+        border: 1px solid $grey-4 !important;
+        cursor: not-allowed;
+      }
+      &.ng-invalid.ng-touched {
+        border: 1px solid #d50531;
+
+        + .input-group-append span {
+          border: 1px solid #d50531;
+        }
+      }
+      &.ng-valid.ng-touched {
+        border: 1px solid #6ab806;
+
+        + .input-group-append span {
+          border: 1px solid #6ab806;
+        }
+      }
+      &::placeholder {
+        color: $grey-3;
+      }
+
+      &.ng-invalid.ng-touched{
+        color: #E73F3F;
+        border-color: #E73F3F;
+      }
+
+      &:focus{
+        box-shadow: 0px 0px 0px 3px rgba(255, 170, 68, 0.2);
+        border: 1px solid $persian-blue !important;
+      }
+    }
+
+    textarea.form-control{
+      height: auto;
+    }
+
+    .input-group {
+      box-shadow: 0px 0.15px 0.45px rgba(0, 0, 0, 0.11), 0px 0.8px 1.8px rgba(0, 0, 0, 0.13);
+
+      .form-control{
+        box-shadow: none;
+      }
+
+      .btn{
+        background: #fff;
+        border: none;
+        &:hover,
+        &:focus,
+        &:active{
+          background: #fff !important;
+        }
+      }
+    }
+
+    .form-text{
+      font-size: 0.625rem;
+    }
+
+    .form-check.form-switch {
+      padding: 0;
+      .form-check-input {
+        margin: 0;
+        width: 36px;
+        height: 20px;
+
+        &:checked {
+          background-color: #FFAA44;
+          border-color: #FFAA44;
+        }
+        &:focus{
+          box-shadow: none;
+        }
+      }
+    }
+  }

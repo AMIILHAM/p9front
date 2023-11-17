@@ -1,0 +1,129 @@
+<div>
+  <h2 id="page-heading">
+    <span>Liste des Patients</span>
+  </h2>
+
+
+  <section class="intro">
+    <div class="bg-image h-100">
+      <div class="mask d-flex align-items-center h-100">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header">
+                  <div class="table-filter">
+                    <form class="form" [formGroup]="searchForm" (ngSubmit)="onSearch()">
+                      <div class="row">
+                        <div class="col-2 form-group">
+                          <label>Nom</label>
+                          <input class="form-control" type="text" name="nom" formControlName="nom" placeholder="Entrez un nom">
+                        </div>
+                        <div class="col-2 form-group">
+                          <label>Prenom</label>
+                          <input class="form-control" type="text" name="prenom" formControlName="prenom" placeholder="Entrez un prenom">
+                        </div>
+                        <div class="col-3 form-group">
+                          <label>Adresse</label>
+                          <input class="form-control" type="text" name="adresse" formControlName="adresse" placeholder="Adresse...">
+                        </div>
+                        <div class="col-3 form-group">
+                          <label>Telephone</label>
+                          <input class="form-control" type="text" name="telephone" formControlName="telephone" placeholder="Telephone...">
+                        </div>
+
+                        <div class="col-2 form-group mt-3">
+                          <label></label>
+                          <button class="btn btn-primary" style="margin-right: 5px;" type="submit" [disabled]="!searchForm.valid">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                          </button>
+                          <button class="btn btn-primary" style="margin-right: 5px;"  type="button" (click)="onRefreshSearch()">
+                            <i class="fa fa-refresh" aria-hidden="true"></i>
+                          </button>
+                          <button class="btn btn-primary" style="margin-right: 5px;" type="button" (click)="addPatient()">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+
+                </div>
+
+                <div class="card-body p-0">
+                  <div class="table-responsive table-scroll" data-mdb-perfect-scrollbar="true" style="position: relative; height: 700px">
+                    <table class="table table-striped mb-0">
+                      <thead style="background-color: #002d72;">
+                      <tr>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Prenom</th>
+                        <th scope="col">Date de Naissance</th>
+                        <th scope="col">Genre</th>
+                        <th scope="col">Adresse Postale</th>
+                        <th scope="col">Telephone</th>
+                        <th scope="col">Actions</th>
+
+                      </tr>
+                      </thead>
+                      <tbody [ngSwitch]="patientList && patientList.length > 0">
+                      <ng-container *ngSwitchCase="true">
+                        <tr *ngFor="let patient of patientList ;trackBy: trackId">
+
+                          <td>{{ patient.nom }}</td>
+                          <td>{{ patient.prenom }}</td>
+                          <td>{{ patient.dateNaissance }}</td>
+                          <td>{{ patient.genre }}</td>
+                          <td>{{ patient.adressePostale }}</td>
+                          <td>{{ patient.numTelephone }}</td>
+
+                          <td>
+                            <div class="btn-group" role="group">
+                              <button type="submit" [routerLink]="[patient.id, 'view']" class="btn btn-outline-primary">
+                                <i class="fa fa-eye" aria-hidden="true"></i>
+                              </button>
+                              <button type="submit" (click)="updatePatient(patient)" class="btn btn-outline-primary">
+                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                      </ng-container>
+                      <ng-container *ngSwitchDefault>
+                        <tr>
+                          <td class="no-data" colspan="18">
+                            <span>no data</span>
+                          </td>
+                        </tr>
+                      </ng-container>
+                      </tbody>
+                    </table>
+                    <div *ngIf="patientList && patientList.length > 0"
+                         class="d-flex align-items-center mt-3"
+                         style="padding-right: 20px;">
+
+                      <ngb-pagination class="ms-auto"
+                                      [collectionSize]="totalItems"
+                                      [(page)]="ngbPaginationPage"
+                                      [pageSize]="itemsPerPage"
+                                      [maxSize]="5"
+                                      [rotate]="true"
+                                      [boundaryLinks]="true"
+                                      (pageChange)="loadPage($event)">
+
+                      </ngb-pagination>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+</div>
+
+
+

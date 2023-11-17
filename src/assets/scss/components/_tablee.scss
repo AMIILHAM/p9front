@@ -1,0 +1,165 @@
+.table-responsive{
+    border-radius: 8px;
+    filter: drop-shadow(0px 0.15px 0.45px rgba(0, 0, 0, 0.11)) drop-shadow(0px 0.8px 1.8px rgba(0, 0, 0, 0.13));
+}
+table.table{
+    margin: 0;
+
+    thead {
+        tr {
+            th {
+                background: $bg-table-head;
+                color: $color-table-head;
+                font-size: $fs-table-head;
+                font-weight: $fw-table-head;
+                text-transform: uppercase;
+                white-space: nowrap;
+                border: none;
+                padding: 0.75rem 1rem;
+                text-align: center;
+                span.status{
+                  width: 150px;
+                  display: inline-block;
+                }
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            td {
+                background: $bg-table-body;
+                color: $color-table-body;
+                font-size: $fs-table-body;
+                font-weight: $fw-table-body;
+                border-bottom: 1px solid $border-color-table-row;
+                padding: 0.75rem;
+                line-height: 25px;
+                text-align: center;
+
+                &.date {
+                    color: $manatee;
+                    padding-left: 30px;
+                    background: url(../../images/date.svg) 10px 14px no-repeat;
+                    white-space: nowrap;
+                }
+
+                &.text-right {
+                    white-space: nowrap;
+                }
+
+                .statut {
+                    color: #fff;
+                    border-radius: 4px;
+                    display: inline-block;
+                    text-align: center;
+                    font-size: 12px;
+                    line-height: 16px;
+                    height: 26px;
+                    padding: 5px 8px;
+                    font-weight: 400;
+                    width: auto;
+                    white-space: nowrap;
+                    opacity: 0.7;
+
+
+                    &.enable {
+                      background-color: #D1EEDB;
+                      color: #102A19;
+                    }
+                    &.disable {
+                      background-color: #F8D5D5;
+                      color: #920E0E;
+                    }
+                }
+                div.status-1{
+                  background: #f7e6cb;
+                  color: #ce6619;
+                  display: flex;
+                  padding: 10px 0;
+                  justify-content: center;
+                  align-items: center;
+                  flex: 1 0 0;
+                  &:after {
+                    background: #ce6619;
+                  }
+                }
+                div.status-2 {
+                  &:after {
+                    background: #128291;
+                  }
+                }
+                div.status-3{
+                  &:after {
+                    background: #920E0E;
+                  }
+                }
+
+
+                &.actions{
+                    width: 0;
+                }
+
+                &.no-data {
+                    text-align: center;
+                    font-size: 1.125rem;
+                    font-weight: 500;
+                    padding: 1.125rem 0;
+                    color: $persian-blue;
+                }
+            }
+
+            &:last-child{
+                td{
+                    border: none;
+                }
+            }
+        }
+
+        .btn {
+            min-width: auto;
+            background: transparent;
+            padding: 0 5px;
+            border: none;
+            width: 30px;
+            height: 20px;
+            border-radius: 30px !important;
+            min-height: 30px;
+
+            i {
+                width: 20px;
+                height: 20px;
+
+                &.view {
+                    background: url(../../images/icon-table-view.svg) center no-repeat;
+                }
+                &.edit {
+                    background: url(../../images/icon-table-edit.svg) center no-repeat;
+                }
+                &.delete {
+                    background: url(../../images/icon-table-delete.svg) center no-repeat;
+                }
+                &.add {
+                    background: url(../../images/icon-table-add.svg) center no-repeat;
+                }
+                &.copy {
+                    background: url(../../images/icon-table-copy.svg) center no-repeat;
+                    border: 1px solid $mosque;
+                    background-size: auto !important;
+                }
+            }
+
+            &:hover,
+            &:active,
+            &:focus{
+                background-color: $catskill-white !important;
+            }
+
+            &.dropdown-toggle {
+                &:after {
+                    display: none;
+                }
+            }
+        }
+    }
+}
